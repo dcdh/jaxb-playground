@@ -17,7 +17,8 @@ public class JaxbLegacyExtensionTest {
     @RegisterExtension
     static final QuarkusUnitTest config = new QuarkusUnitTest()
             .setArchiveProducer(() ->
-                    ShrinkWrap.create(JavaArchive.class));
+                    ShrinkWrap.create(JavaArchive.class)
+                            .addAsResource("application.properties"));
 
     @Test
     void should() throws JAXBException {
